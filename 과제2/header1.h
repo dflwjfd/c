@@ -93,7 +93,6 @@ int is_prime(int num)
     printf("true");
     return 1;
 }
-
 int is_prime_with_input()
 {
     int num;
@@ -101,12 +100,14 @@ int is_prime_with_input()
     scanf_s("%d", &num);
     if (is_prime(num))
     {
-        printf("True");;
+        printf("\n%d은(는) 소수입니다.\n", num);
+        
         return 1;
     }
     else
     {
-        printf("False");
+        printf("\n%d은(는) 소수가 아닙니다.\n", num);
+        
         return 0;
     }
 }
