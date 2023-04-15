@@ -2,68 +2,80 @@
 
 int gcd(int num1, int num2)
 {
-    int min_num = num1 < num2 ? num1 : num2; // µÎ ¼ö Áß ÀÛÀº ¼ö Ã£±â
-    int gcd = 1; // ÃÊ±â°ª ¼³Á¤
+    int min_num = num1 < num2 ? num1 : num2; // ë‘ ìˆ˜ ì¤‘ ì‘ì€ ìˆ˜ ì°¾ê¸°
+    int gcd = 1; // ì´ˆê¸°ê°’ ì„¤ì •
 
-    for (int i = 2; i <= min_num; i++) // ÀÛÀº ¼öºÎÅÍ 2¾¿ Áõ°¡ÇÏ¸ç °Ë»ç
+    for (int i = 2; i <= min_num; i++) // ì‘ì€ ìˆ˜ë¶€í„° 2ì”© ì¦ê°€í•˜ë©° ê²€ì‚¬
     {
-        if (num1 % i == 0 && num2 % i == 0) // µÎ ¼ö ¸ğµÎ ³ª´©¾î ¶³¾îÁú °æ¿ì
+        if (num1 % i == 0 && num2 % i == 0) // ë‘ ìˆ˜ ëª¨ë‘ ë‚˜ëˆ„ì–´ ë–¨ì–´ì§ˆ ê²½ìš°
         {
-            gcd = i; // ÃÖ´ë°ø¾à¼ö °»½Å
+            gcd = i; // ìµœëŒ€ê³µì•½ìˆ˜ ê°±ì‹ 
         }
     }
 
-    printf("ÃÖ´ë°ø¾à¼ö: %d\n", gcd);
+    printf("ìµœëŒ€ê³µì•½ìˆ˜: %d\n", gcd);
     return gcd;
 }
 
 int gcd1()
 {
     int num1 = 0, num2 = 0;
-    printf("¼ıÀÚ1:");
+    printf("ìˆ«ì1:");
     scanf_s("%d", &num1);
-    printf("¼ıÀÚ2:");
+    printf("ìˆ«ì2:");
     scanf_s("%d", &num2);
-    int min_num = num1 < num2 ? num1 : num2; // µÎ ¼ö Áß ÀÛÀº ¼ö Ã£±â
-    int gcd = 1; // ÃÊ±â°ª ¼³Á¤
+    int min_num = num1 < num2 ? num1 : num2; // ë‘ ìˆ˜ ì¤‘ ì‘ì€ ìˆ˜ ì°¾ê¸°
+    int gcd = 1; // ì´ˆê¸°ê°’ ì„¤ì •
 
-    for (int i = 2; i <= min_num; i++) // ÀÛÀº ¼öºÎÅÍ 1¾¿ Áõ°¡ÇÏ¸ç °Ë»ç
+    for (int i = 2; i <= min_num; i++) // ì‘ì€ ìˆ˜ë¶€í„° 1ì”© ì¦ê°€í•˜ë©° ê²€ì‚¬
     {
-        if (num1 % i == 0 && num2 % i == 0) // µÎ ¼ö ¸ğµÎ ³ª´©¾î ¶³¾îÁú °æ¿ì
+        if (num1 % i == 0 && num2 % i == 0) // ë‘ ìˆ˜ ëª¨ë‘ ë‚˜ëˆ„ì–´ ë–¨ì–´ì§ˆ ê²½ìš°
         {
-            gcd = i; // ÃÖ´ë°ø¾à¼ö °»½Å
+            gcd = i; // ìµœëŒ€ê³µì•½ìˆ˜ ê°±ì‹ 
         }
     }
 
-    printf("ÃÖ´ë°ø¾à¼ö: %d\n", gcd);
+    printf("ìµœëŒ€ê³µì•½ìˆ˜: %d\n", gcd);
     return gcd;
 }
 
 
-int lcm(int num1, int num2)
-{
-    int result = gcd(num1, num2) / (num1 * num2);
-    printf("%d", result);
+int lcm(int num1, int num2) {
+    int min_num = num1 < num2 ? num1 : num2; // ë‘ ìˆ˜ ì¤‘ì—ì„œ ì‘ì€ ìˆ˜ë¥¼ ê¸°ì¤€ìœ¼ë¡œ ì„¤ì •
+    while (1)
+    {
+        if (min_num % num1 == 0 && min_num % num2 == 0) 
 
-    return result;
+        {
+            printf("ë‘ ìˆ˜ì˜ ìµœì†Œê³µë°°ìˆ˜:%d", min_num);
+            return min_num; // ë‘ ìˆ«ì ëª¨ë‘ë¡œ ë‚˜ëˆ„ì–´ ë–¨ì–´ì§€ëŠ” ìµœì†Œê³µë°°ìˆ˜ë¥¼ ì°¾ìŒ
+        }
+        min_num++;
 
-}
+    }
 
 int lcm1()
 {
     int num1 = 0, num2 = 0;
+    
     printf("num1:");
     scanf_s("%d", &num1);
 
     printf("num2:");
     scanf_s("%d", &num2);
+    int min_num = num1 < num2 ? num1 : num2;
+    while (1)
+    {
+        if (min_num % num1 == 0 && min_num % num2 == 0)
+        {
+            printf("ë‘ ìˆ˜ì˜ ìµœì†Œê³µë°°ìˆ˜:%d", min_num);
+            return min_num;
+        }
 
+        min_num++;
 
-    int result = gcd(num1, num2) / (num1 * num2);
-    printf("%d", result);
-
-    return result;
-
+    }
+   
 }
 
 int is_prime(int num)
@@ -85,7 +97,7 @@ int is_prime(int num)
 int is_prime_with_input()
 {
     int num;
-    printf("¼Ò¼ö¸¦ ÆÇº°ÇÒ ¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+    printf("ì†Œìˆ˜ë¥¼ íŒë³„í•  ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
     scanf_s("%d", &num);
     if (is_prime(num))
     {
