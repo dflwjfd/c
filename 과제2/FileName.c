@@ -25,17 +25,15 @@ int main(void)
 {
 int num, base;
 
-printf("º¯È¯ÇÒ 10Áø¼ö ÀÔ·Â: ");
+printf("ë³€í™˜í•  10ì§„ìˆ˜ ì…ë ¥: ");
 scanf_s("%d", &num);
 
-printf("º¯È¯ÇÒ Áø¹ı ÀÔ·Â(2-16): ");
+printf("ë³€í™˜í•  ì§„ë²• ì…ë ¥(2-16): ");
 scanf_s("%d", &base);
 
 
-    scanf_s("%d", &base);
 
-
-printf("%dÀÇ %dÁø¼ö º¯È¯ °ª: ", num, base);
+printf("%dì˜ %dì§„ìˆ˜ ë³€í™˜ ê°’: ", num, base);
 convert_base(num, base);
 printf("\n");
 
